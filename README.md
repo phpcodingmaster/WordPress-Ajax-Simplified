@@ -1,5 +1,5 @@
 # WordPress-Ajax-Simplified
-A beautiful PHP Class to make Ajax Requests in WordPress. Handles wp_ajax_nopriv_{$action} & wp_ajax_{$action} . Download the PHP class and require the file in your main WordPress Plugin file. You don't have to write a lot of add_action() hooks when using this PHP class. Write two methods to make Ajax Work in your WordPress website.
+A beautiful PHP Class to make Ajax Requests in WordPress. Handles wp_ajax_nopriv_{$action} & wp_ajax_{$action} . Download the PHP class and require the file in your main WordPress Plugin file. You don't have to use the add_action() hooks when using this PHP class. Write two methods to make Ajax Work in your WordPress website.
 
 ----------------------------------------------------------------------------------------------------
 ### 1. Enqueue the JavaScript file & Localize the registered script with data for a JavaScript variable.
