@@ -54,7 +54,7 @@ jQuery(document).ready(function () {
 ```
 
 ----------------------------------------------------------------------------------------------------
-### 2. Validate Admin Ajax Request
+### 2. Handle Ajax Requests in the WordPress Admin Dashboard
 ----------------------------------------------------------------------------------------------------
 
 #### AjaxSimplified::validateAdminAjaxRequest(callable $callback);
@@ -69,7 +69,7 @@ if( isset($_GET["name"] ) {
 ```
 
 ----------------------------------------------------------------------------------------------------
-### 3. Validate AJAX requests from unauthenticated users
+### 3. Handle AJAX requests from unauthenticated users
 ----------------------------------------------------------------------------------------------------
 
 #### AjaxSimplified::validateAjaxRequest(callable $callback);
