@@ -22,14 +22,14 @@
 
     }
 
-    public static function validateAdminAjaxRequest(callable $callback) {
+    public static function validateAdminAjaxRequest(string $action, callable $callback) {
         add_action('admin_enqueue_scripts', array( get_called_class(), 'enqueueAjaxData' ) );
-        add_action("wp_ajax_" . self::$objectName, $callback );
+        add_action("wp_ajax_" . $action, $callback );
     }
 
-    public static function validateAjaxRequest(callable $callback) {
+    public static function validateAjaxRequest(string $action, callable $callback) {
         add_action('wp_enqueue_scripts', array( get_called_class(), 'enqueueAjaxData' ) );
-        add_action("wp_ajax_nopriv_" . self::$objectName, $callback );
+        add_action("wp_ajax_nopriv_" . $action, $callback );
     }
 
     public static function enqueueAjaxData() {
