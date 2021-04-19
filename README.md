@@ -57,7 +57,7 @@ jQuery(document).ready(function () {
 #### AjaxSimplified::validateAdminAjaxRequest(string, $action, callable $callback);
 
 ```
-AjaxSimplified::validateAdminAjaxRequest('hello', function() {
+AjaxSimplified::validateAdminAjaxRequest('sayhello', function() {
 if( isset($_GET["name"] ) {
 	$name = $_GET["name"];
 	update_option("name", $name);
@@ -72,7 +72,7 @@ if( isset($_GET["name"] ) {
 #### AjaxSimplified::validateAjaxRequest(string $action, callable $callback);
 
 ```
-AjaxSimplified::validateAjaxRequest('hello', function() {
+AjaxSimplified::validateAjaxRequest('sayhello', function() {
 if( isset($_GET["name"] ) {
 	$name = $_GET["name"];
 	update_option("name", $name);
