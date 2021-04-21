@@ -11,14 +11,22 @@
      protected static $dependencies;
      protected static $scriptversion;
      protected static $objectName;
+     protected static $parameters;
 
-    public static function setAjaxData(string $scriptName, string $scriptPath, array $dependencies = array(), string $scriptVersion, string $objectName) {
+    public static function setAjaxData(string $scriptName, string $scriptPath, array $dependencies = array(), string $scriptVersion, string $objectName , array $parameters) {
 
         self::$scriptName = $scriptName;
         self::$scriptPath = plugins_url() . $scriptPath;
         self::$dependencies = $dependencies;
         self::$scriptversion = $scriptVersion;
         self::$objectName = $objectName;
+        self::$parameters = array(
+            'ajaxurl' => admin_url('admin-ajax.php')
+        );
+     
+        if( isset($parameters) && is_array($parameters) ){
+           self::$parameters = array_merge( self::$parameters, $parameters );
+        }
 
     }
 
@@ -33,11 +41,11 @@
     }
 
     public static function enqueueAjaxData() {
+     
         // Enqueue Script
-        wp_enqueue_script(self::$scriptName, self::$scriptPath, self::$dependencies,self::$scriptversion);
-        wp_localize_script(self::$scriptName, self::$objectName, array(
-            'ajaxurl' => admin_url('admin-ajax.php')
-        ));
+        wp_enqueue_script(self::$scriptName,  self::$scriptPath, self::$dependencies,self::$scriptversion);
+        wp_localize_script(self::$scriptName, self::$objectName, self::$parameters );
+     
     }
 
  }
