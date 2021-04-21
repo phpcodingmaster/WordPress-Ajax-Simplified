@@ -5,14 +5,15 @@ A beautiful PHP Class to make Ajax Requests in WordPress. Handles wp_ajax_nopriv
 ### 1. Enqueue the JavaScript file & Create the Javascript Object 
 ----------------------------------------------------------------------------------------------------
 
-#### AjaxSimplified::setAjaxData( $scriptName, $scriptPath, $dependencies, $scriptVersion, $objectName );
+#### AjaxSimplified::setAjaxData( string $scriptName, string $scriptPath, array $dependencies, string $scriptVersion, string $objectName, array $parameters );
 
 ```
 AjaxSimplified::setAjaxData("hello",
 "/your-plugin_directory-name/hello.js", 
 array(),
 '1.0.0',
-'sayhello'
+'sayhello',
+array()
 );
 ```
 
